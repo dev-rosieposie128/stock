@@ -3,8 +3,7 @@ package com.example.stock.service;
 import com.example.stock.domain.Stock;
 import com.example.stock.repository.StockRepository;
 import org.springframework.stereotype.Service;
-
-import javax.transaction.Transactional;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class StockService {
@@ -17,8 +16,8 @@ public class StockService {
         this.stockRepository = stockRepository;
     }
 
-    @Transactional
-    public void decrease(Long id, Long quantity){
+    //@Transactional
+    public synchronized void decrease(Long id, Long quantity){
 
         /*  1 재고 확인
             2 재고 감소
