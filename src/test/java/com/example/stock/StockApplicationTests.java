@@ -2,6 +2,7 @@ package com.example.stock;
 
 import com.example.stock.domain.Stock;
 import com.example.stock.repository.StockRepository;
+import com.example.stock.service.PessimistickLockStockService;
 import com.example.stock.service.StockService;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -20,7 +21,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class StockApplicationTests {
 
 	@Autowired
-	private StockService stockService;
+	private PessimistickLockStockService stockService;
+	//private StockService stockService;
+
 	@Autowired
 	private StockRepository stockRepository;
 
